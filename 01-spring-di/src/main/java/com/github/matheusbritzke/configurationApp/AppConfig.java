@@ -1,6 +1,7 @@
 package com.github.matheusbritzke.configurationApp;
 
 import com.github.matheusbritzke.calculator.Calculator;
+import com.github.matheusbritzke.functions.Subtraction;
 import com.github.matheusbritzke.maps.MapOperations;
 import com.github.matheusbritzke.functions.Sum;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,7 @@ public class AppConfig {
     public MapOperations mapOperations(){
         MapOperations mapOperations = new MapOperations();
         mapOperations.getMapOperation().put("+", new Sum());
+        mapOperations.getMapOperation().put("-", new Subtraction());
         return mapOperations;
     }
 }
