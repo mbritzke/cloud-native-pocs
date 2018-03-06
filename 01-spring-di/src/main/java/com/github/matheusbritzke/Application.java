@@ -11,5 +11,6 @@ public class Application {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator currentCalculator = (Calculator) applicationContext.getBean("calculator");
         System.out.println(currentCalculator.calculate(3,1, "+"));
+        System.out.println(currentCalculator.calculate(2, 2,"-"));
     }
 }
