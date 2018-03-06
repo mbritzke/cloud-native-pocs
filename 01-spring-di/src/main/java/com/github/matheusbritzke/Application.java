@@ -10,7 +10,10 @@ public class Application {
     public static void main(String args[]){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator currentCalculator = (Calculator) applicationContext.getBean("calculator");
-        System.out.println(currentCalculator.calculate(3,1, "+"));
-        System.out.println(currentCalculator.calculate(2, 2,"-"));
+        System.out.println("3+1 = " + currentCalculator.calculate(3,1, "+"));
+        System.out.println("2-2 = " + currentCalculator.calculate(2, 2,"-"));
+        System.out.println("3*3 = " + currentCalculator.calculate(3, 3,"*"));
+        System.out.println("16/4 = " + currentCalculator.calculate(16, 4,"/"));
+        System.out.println("5^ = " + currentCalculator.calculate(5, 3,"^"));
     }
 }
