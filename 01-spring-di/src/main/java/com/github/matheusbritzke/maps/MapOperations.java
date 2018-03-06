@@ -1,4 +1,6 @@
-package com.github.matheusbritzke;
+package com.github.matheusbritzke.maps;
+
+import com.github.matheusbritzke.functions.Operation;
 
 import java.util.HashMap;
 import java.util.Map;

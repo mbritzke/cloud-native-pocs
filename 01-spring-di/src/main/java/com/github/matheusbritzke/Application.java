@@ -1,5 +1,7 @@
 package com.github.matheusbritzke;
 
+import com.github.matheusbritzke.calculator.Calculator;
+import com.github.matheusbritzke.configurationApp.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

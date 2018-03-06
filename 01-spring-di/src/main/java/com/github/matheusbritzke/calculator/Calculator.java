@@ -1,5 +1,6 @@
-package com.github.matheusbritzke;
+package com.github.matheusbritzke.calculator;
 
+import com.github.matheusbritzke.maps.MapOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Calculator {

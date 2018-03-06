@@ -1,4 +1,4 @@
-package com.github.matheusbritzke;
+package com.github.matheusbritzke.functions;
 
 import org.springframework.stereotype.Component;
 
