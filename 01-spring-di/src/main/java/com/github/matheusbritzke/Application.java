@@ -23,5 +23,8 @@ public class Application {
         System.out.println("\nLIST OF ALL OPERATIONS: ");
         currentCalculator.showHistory();
 
+        System.out.println("\nLIST OF ALL INVALID OPERATIONS: ");
+        currentCalculator.showHistoryByOperation("Invalid Operation");
+
     }
 }
