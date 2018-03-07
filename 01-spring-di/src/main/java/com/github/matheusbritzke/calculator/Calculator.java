@@ -1,13 +1,11 @@
 package com.github.matheusbritzke.calculator;
 
 import com.github.matheusbritzke.maps.MapOperations;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class Calculator {
 
     private MapOperations mapOperations;
 
-    @Autowired
     public Calculator(MapOperations mapOperations) {
         this.mapOperations = mapOperations;
     }
