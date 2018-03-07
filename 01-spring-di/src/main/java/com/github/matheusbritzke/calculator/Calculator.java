@@ -13,15 +13,24 @@ public class Calculator {
         this.historyOperations = historyOperations;
     }
 
-    public double calculate(double firstNumber, double secondNumber, String operation){
-        double answer = mapOperations.getMapOperation().get(operation).calculate(firstNumber, secondNumber);
-        saveOperation(firstNumber, secondNumber, operation, answer);
-        return answer;
+    public String calculate(double firstNumber, double secondNumber, String operation){
+        boolean statusOperation = validateOperation(operation);
+        if(statusOperation){
+            double answer = mapOperations.getMapOperations().get(operation).calculate(firstNumber, secondNumber);
+            return saveOperations(firstNumber, secondNumber, operation, String.valueOf(answer));
+        }
+        return saveOperations(firstNumber, secondNumber, "Invalid Operation", "Erro");
     }
 
-    private void saveOperation(double firstNumber, double secondNumber, String operation, double ans){
-        String completeOperation = firstNumber + " "+ operation + " " + secondNumber + " = " + ans;
+    private boolean validateOperation(String operation) {
+        String typeOfOperation = "+-*/^";
+        return typeOfOperation.contains(operation);
+    }
+
+    private String saveOperations(double firstNumber, double secondNumber, String operation, String answer) {
+        String completeOperation = firstNumber + " "+ operation + " " + secondNumber + " = " + answer;
         historyOperations.getHistoryOperations().get(operation).add(completeOperation);
+        return completeOperation;
     }
 
     public void showHistory(){
