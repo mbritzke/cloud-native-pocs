@@ -6,7 +6,7 @@ Essa POC foi construída utilizando as tecnologias:
 - Gradle
 - Spring 4
 
-Foco: Estudar a injeção de depêndencias do Spring e a integração com JUnit.
+Foco: Estudar a injeção de dependências do Spring e a integração com JUnit.
 
 Regras de implementação:
 
