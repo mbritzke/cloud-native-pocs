@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class MapOperations {
 
-    private Map<String, Operation> mapOperation = new HashMap<>();
+    private Map<String, Operation> mapOperations = new HashMap<>();
 
-    public Map<String, Operation> getMapOperation() {
-        return mapOperation;
+    public Map<String, Operation> getMapOperations() {
+        return mapOperations;
     }
 }
