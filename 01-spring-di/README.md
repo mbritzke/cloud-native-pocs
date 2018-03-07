@@ -1,4 +1,4 @@
-#Calculadora
+# Calculadora
 
 Essa POC foi construída utilizando as tecnologias:
 
