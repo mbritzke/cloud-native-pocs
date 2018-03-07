@@ -24,31 +24,42 @@ public class CalculatorTest {
     @Test
     public void sum(){
         String sum = calculator.calculate(2,2, "+");
-        Assert.assertEquals("4.0", sum);
+        String expected = "2.0 + 2.0 = 4.0";
+        Assert.assertEquals(expected, sum);
     }
 
     @Test
     public void subtraction(){
         String sub = calculator.calculate(2, 2, "-");
-        Assert.assertEquals("0.0", sub);
+        String expected = "2.0 - 2.0 = 0.0";
+        Assert.assertEquals(expected, sub);
     }
 
     @Test
     public void multiplication(){
         String mult = calculator.calculate(3,3, "*");
-        Assert.assertEquals("9.0", mult);
+        String expected = "3.0 * 3.0 = 9.0";
+        Assert.assertEquals(expected, mult);
     }
 
     @Test
     public void division(){
         String div = calculator.calculate(16, 4, "/");
-        Assert.assertEquals("4.0", div);
+        String expected = "16.0 / 4.0 = 4.0";
+        Assert.assertEquals(expected, div);
     }
 
     @Test
     public void invalidOperation(){
         String invalid = calculator.calculate(16, 4, "a");
-        String expected = "16.0 Invalid Operation 4.0 = Erro";
+        String expected = "16.0 Invalid Operation 4.0 = Unmapped Operation";
         Assert.assertEquals(expected, invalid);
+    }
+
+    @Test
+    public void divisionByZero(){
+        String divZero = calculator.calculate(10, 0, "/");
+        String expected = "10.0 Invalid Operation 0.0 = Division By Zero";
+        Assert.assertEquals(expected, divZero);
     }
 }
