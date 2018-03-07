@@ -3,6 +3,8 @@ package com.github.matheusbritzke.calculator;
 import com.github.matheusbritzke.maps.HistoryOperations;
 import com.github.matheusbritzke.maps.MapOperations;
 
+import static jdk.nashorn.internal.objects.Global.Infinity;
+
 public class Calculator {
 
     private MapOperations mapOperations;
@@ -14,17 +16,15 @@ public class Calculator {
     }
 
     public String calculate(double firstNumber, double secondNumber, String operation){
-        boolean statusOperation = validateOperation(operation);
-        if(statusOperation){
-            double answer = mapOperations.getMapOperations().get(operation).calculate(firstNumber, secondNumber);
-            return saveOperations(firstNumber, secondNumber, operation, String.valueOf(answer));
+        double answer;
+        try{
+            answer = mapOperations.getMapOperations().get(operation).calculate(firstNumber, secondNumber);
+            if(answer == Infinity)
+                return saveOperations(firstNumber, secondNumber, "Invalid Operation", "Division By Zero");
+        } catch (Exception e){
+            return saveOperations(firstNumber, secondNumber, "Invalid Operation", "Unmapped Operation");
         }
-        return saveOperations(firstNumber, secondNumber, "Invalid Operation", "Erro");
-    }
-
-    private boolean validateOperation(String operation) {
-        String typeOfOperation = "+-*/^";
-        return typeOfOperation.contains(operation);
+        return saveOperations(firstNumber, secondNumber, operation, String.valueOf(answer));
     }
 
     private String saveOperations(double firstNumber, double secondNumber, String operation, String answer) {
