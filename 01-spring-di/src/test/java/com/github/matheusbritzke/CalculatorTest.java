@@ -23,25 +23,32 @@ public class CalculatorTest {
 
     @Test
     public void sum(){
-        double sum = calculator.calculate(2,2, "+");
-        Assert.assertEquals(4.0, sum, 0);
+        String sum = calculator.calculate(2,2, "+");
+        Assert.assertEquals("4.0", sum);
     }
 
     @Test
     public void subtraction(){
-        double sub = calculator.calculate(2, 2, "-");
-        Assert.assertEquals(0.0, sub, 0);
+        String sub = calculator.calculate(2, 2, "-");
+        Assert.assertEquals("0.0", sub);
     }
 
     @Test
     public void multiplication(){
-        double mult = calculator.calculate(3,3, "*");
-        Assert.assertEquals(9, mult, 0);
+        String mult = calculator.calculate(3,3, "*");
+        Assert.assertEquals("9.0", mult);
     }
 
     @Test
     public void division(){
-        double div = calculator.calculate(16, 4, "/");
-        Assert.assertEquals(4, div, 0);
+        String div = calculator.calculate(16, 4, "/");
+        Assert.assertEquals("4.0", div);
+    }
+
+    @Test
+    public void invalidOperation(){
+        String invalid = calculator.calculate(16, 4, "a");
+        String expected = "16.0 Invalid Operation 4.0 = Erro";
+        Assert.assertEquals(expected, invalid);
     }
 }
