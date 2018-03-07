@@ -37,4 +37,11 @@ public class Calculator {
         for(String aux: historyOperations.getHistoryOperations().keySet())
             System.out.println(historyOperations.getHistoryOperations().get(aux) + "\n");
     }
+
+    public void showHistoryByOperation(String operation) {
+        for(String aux: historyOperations.getHistoryOperations().keySet())
+            if (aux.contains(operation))
+                System.out.println(historyOperations.getHistoryOperations().get(aux) + "\n");
+
+    }
 }
