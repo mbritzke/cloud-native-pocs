@@ -23,11 +23,11 @@ public class AppConfig {
     @Bean
     public MapOperations mapOperations(){
         MapOperations mapOperations = new MapOperations();
-        mapOperations.getMapOperation().put("+", new Sum());
-        mapOperations.getMapOperation().put("-", new Subtraction());
-        mapOperations.getMapOperation().put("*", new Multiplication());
-        mapOperations.getMapOperation().put("/", new Division());
-        mapOperations.getMapOperation().put("^", new Pow());
+        mapOperations.getMapOperations().put("+", new Sum());
+        mapOperations.getMapOperations().put("-", new Subtraction());
+        mapOperations.getMapOperations().put("*", new Multiplication());
+        mapOperations.getMapOperations().put("/", new Division());
+        mapOperations.getMapOperations().put("^", new Pow());
         return mapOperations;
     }
 
@@ -39,6 +39,7 @@ public class AppConfig {
         historyOperations.getHistoryOperations().put("*", new ArrayList<>());
         historyOperations.getHistoryOperations().put("/", new ArrayList<>());
         historyOperations.getHistoryOperations().put("^", new ArrayList<>());
+        historyOperations.getHistoryOperations().put("Invalid Operation", new ArrayList<>());
         return historyOperations;
     }
 }
